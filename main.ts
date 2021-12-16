@@ -81,7 +81,7 @@ list = [
 ]
 ]
 while (false) {
-    A = 0
+    A = 2
 }
 control.inBackground(function () {
     led2(0, 1000)
