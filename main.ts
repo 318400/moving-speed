@@ -1,5 +1,5 @@
 function led2 (y: number, speed: number) {
-    if (A == 1) {
+    if (方向 == 1) {
         while (true) {
             for (let index = 0; index <= 4; index++) {
                 if (list[y][index] == 1) {
@@ -11,10 +11,8 @@ function led2 (y: number, speed: number) {
             list[y].unshift(list[y].pop())
             basic.pause(speed)
         }
-    }
-}
-function led22 (y: number, speed: number) {
-    if (A == 2) {
+        basic.clearScreen()
+    } else if (方向 == 2) {
         while (true) {
             for (let index = 0; index <= 4; index++) {
                 if (list[y][index] == 1) {
@@ -26,16 +24,18 @@ function led22 (y: number, speed: number) {
             list[y].unshift(list[y].pop())
             basic.pause(speed)
         }
+        basic.clearScreen()
     }
 }
 input.onButtonPressed(Button.A, function () {
-    A = 1
+    方向 = 1
 })
 input.onButtonPressed(Button.B, function () {
-    A = 2
+    方向 = 2
 })
-let A = 0
 let list: number[][] = []
+let 方向 = 0
+方向 = 1
 list = [
 [
 1,
@@ -80,17 +80,8 @@ list = [
 0
 ]
 ]
-while (false) {
-    A = 2
-}
 control.inBackground(function () {
     led2(0, 1000)
-})
-control.inBackground(function () {
-    led22(0, 1000)
-})
-control.inBackground(function () {
-    led22(1, 500)
 })
 control.inBackground(function () {
     led2(1, 500)
@@ -99,17 +90,8 @@ control.inBackground(function () {
     led2(2, 250)
 })
 control.inBackground(function () {
-    led22(2, 250)
-})
-control.inBackground(function () {
     led2(3, 200)
 })
 control.inBackground(function () {
-    led22(3, 200)
-})
-control.inBackground(function () {
     led2(4, 100)
-})
-control.inBackground(function () {
-    led22(4, 100)
 })
